@@ -1,12 +1,12 @@
 """
 app.py
 Streamlit dashboard for the Phishing Detection Tool.
-Run with: streamlit run App.py
+Run with: streamlit run app.py
 """
 
 import streamlit as st
-from Url_checker import analyse_url
-from Email_checker import analyse_email
+from Url_Checker import analyse_url
+from Email_Checker import analyse_email
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -267,16 +267,18 @@ Thanks for contributing!
 
 The GitHub Team"""
 
-    EXAMPLE_MEDIUM_EMAIL = """From: Netflix Billing <billing@netflix-update.info>
-Subject: Your payment failed - update required
+    EXAMPLE_MEDIUM_EMAIL = """From: Rewards Team <noreply@survey-rewards.com>
+Subject: You have been selected for a reward
 
-Dear User,
+Dear Customer,
 
-Your recent payment for Netflix did not go through. Please update your payment information to avoid interruption to your service.
+Congratulations! You have been selected to receive a special reward as part of our customer appreciation programme.
 
-Click here to update: https://netflix-billing-update.info/payment
+To claim your free gift, simply complete a short survey at: http://survey-rewards.com/claim
 
-Netflix Support Team"""
+This offer expires in 48 hours.
+
+Rewards Programme Team"""
 
     st.markdown("**Quick test examples:**")
     ecol1, ecol2, ecol3 = st.columns(3)
