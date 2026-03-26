@@ -147,18 +147,20 @@ PayPal Security Team
 #### 🟡 Medium Risk Email
 
 ```
-From: Netflix Billing <billing@netflix-update.info>
-Subject: Your payment failed - update required
+From: Rewards Team <noreply@survey-rewards.com>
+Subject: You have been selected for a reward
 
-Dear User,
+Dear Customer,
 
-Your recent payment for Netflix did not go through. Please update your payment information to avoid interruption to your service.
+Congratulations! You have been selected to receive a special reward as part of our customer appreciation programme.
 
-Click here to update: https://netflix-billing-update.info/payment
+To claim your free gift, simply complete a short survey at: http://survey-rewards.com/claim
 
-Netflix Support Team
+This offer expires in 48 hours.
+
+Rewards Programme Team
 ```
-*Triggers: Sender domain mismatch, generic greeting, phishing keyword in link*
+*Triggers: Reward/prize bait, urgency language, generic greeting — scores 45/100*
 
 ---
 
