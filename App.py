@@ -1,12 +1,12 @@
 """
 app.py
 Streamlit dashboard for the Phishing Detection Tool.
-Run with: streamlit run app.py
+Run with: streamlit run App.py
 """
 
 import streamlit as st
-from Url_Checker import analyse_url
-from Email_Checker import analyse_email
+from Url_checker import analyse_url
+from Email_checker import analyse_email
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -267,16 +267,32 @@ Thanks for contributing!
 
 The GitHub Team"""
 
+    EXAMPLE_MEDIUM_EMAIL = """From: Netflix Billing <billing@netflix-update.info>
+Subject: Your payment failed - update required
+
+Dear User,
+
+Your recent payment for Netflix did not go through. Please update your payment information to avoid interruption to your service.
+
+Click here to update: https://netflix-billing-update.info/payment
+
+Netflix Support Team"""
+
     st.markdown("**Quick test examples:**")
-    ecol1, ecol2 = st.columns(2)
+    ecol1, ecol2, ecol3 = st.columns(3)
     with ecol1:
         load_phishing = st.button("🔴 Load phishing email example")
     with ecol2:
+        load_medium = st.button("🟡 Load medium risk example")
+    with ecol3:
         load_legit = st.button("🟢 Load legitimate email example")
 
     default_email = ""
     if load_phishing:
         default_email = EXAMPLE_PHISHING_EMAIL
+        st.session_state["email_example"] = default_email
+    elif load_medium:
+        default_email = EXAMPLE_MEDIUM_EMAIL
         st.session_state["email_example"] = default_email
     elif load_legit:
         default_email = EXAMPLE_LEGIT_EMAIL
